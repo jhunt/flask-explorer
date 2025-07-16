@@ -22,7 +22,7 @@ def index_handler():
 
 @app.route("/file/<path:file>")
 def file_handler(file):
-  return flask.send_file(file, root_path='/')
+  return flask.send_from_directory('/', file)
 
 @app.route("/ls")
 def ls_handler_root():
