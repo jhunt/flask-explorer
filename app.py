@@ -18,7 +18,7 @@ app = flask.Flask('app')
 
 @app.route("/")
 def index_handler():
-  return flask.render_template('index.html', env=os.environ.items())
+  return flask.render_template('index.html', env=sorted(os.environ.items()))
 
 @app.route("/file/<path:file>")
 def file_handler(file):
